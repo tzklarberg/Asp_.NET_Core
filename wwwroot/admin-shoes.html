@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ניהול נעליים</title>
+    <link rel="icon" href="./assets/icon.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+</head>
+
+<body class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h2 class="mb-4">כל הנעליים של כל המשתמשים</h2>
+            <div class="card shadow">
+                <div class="card-header">רשימת נעליים</div>
+                <ul id="allShoesList" class="list-group list-group-flush"></ul>
+            </div>
+            <a href="./users.html">הצגת המשתמשים</a>
+        </div>
+    </div>
+    <script>
+        getCookie = (name) => {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        fetchAllShoes = async () => {
+            const token = getCookie('AuthToken');
+            if (!token) return window.location.href = '/login.html';
+
+            //plaster id
+            const userRes = await fetch('http://localhost:5187/User/6', {
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+            if (!userRes) {
+                alert("error");
+            }
+            const user = await userRes.json();
+            if (user.type !== 'ADMIN') return window.location.href = '/shoes.html';
+
+            const res = await fetch('http://localhost:5187/Shoes', {
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+            const resUsers = await fetch('http://localhost:5187/User', {
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+            const allUsers = await resUsers.json();
+
+            const allShoes = await res.json();
+            const list = document.getElementById('allShoesList');
+            list.innerHTML = '';
+
+            allShoes.forEach(item => {
+                const li = document.createElement('li');
+                li.className = "list-group-item d-flex justify-content-between align-items-center";
+                li.innerHTML = `
+                    <span><b>${findUser(item, allUsers).name}:</b> ${item.name} <b>${showIsElegant(item.isElegant)}</b></span>
+                    <span>
+                        <button onclick="editShoe(${item.id}, '${item.name}')" class="btn btn-sm btn-warning ms-2">ערוך</button>
+                        <button onclick="deleteShoe(${item.id})" class="btn btn-sm btn-danger">מחק</button>
+                    </span>
+                `;
+                list.appendChild(li);
+            });
+        }
+        showIsElegant = (isElegant) => {
+            if (isElegant)
+                return "Elegant";
+            return "";
+        }
+
+        findUser = (item, allUsers) => {
+            const user = allUsers.find(user => user.id === item.userId);
+            // console.log(user);
+            // console.log(user.name);
+            return user ? user : "לא נמצא משתמש";
+        }
+
+        window.editShoe = async function (id, oldName) {
+            const newName = prompt('שם חדש לנעל:', oldName);
+            if (!newName) {
+                console.log("absent new name");
+                return;
+            }
+            const isElegantStr = prompt('האם הנעל אלגנטית? (כן/לא):', 'כן');
+            if (isElegantStr === null) {
+                console.log("absent is elegent");
+                return;
+            }
+            const isElegant = isElegantStr.trim() === 'כן';
+
+            const token = getCookie('AuthToken');
+            await fetch('http://localhost:5187/Shoes/' + id, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    Id: id,
+                    Name: newName,
+                    isElegant: isElegant,
+                    UserId: 0
+
+                })
+            });
+            fetchAllShoes();
+        };
+
+
+        window.deleteShoe = async function (id) {
+            const token = getCookie('AuthToken');
+            await fetch('http://localhost:5187/Shoes/' + id, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+            fetchAllShoes();
+        };
+
+        fetchAllShoes();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+[{
+        "Id": 1,
+        "Name": "Adidas UltraBoost",
+        "isElegant": true,
+        "UserName": "David Cohen"
+    },
+    {
+        "Id": 2,
+        "Name": "Nike Air Force 1",
+        "isElegant": false,
+        "UserName": "Miriam Levi"
+    },
+    {
+        "Id": 3,
+        "Name": "Puma RS-X",
+        "isElegant": true,
+        "UserName": "Yaakov Schwartz"
+    },
+    {
+        "Id": 4,
+        "Name": "Reebok Classic",
+        "isElegant": false,
+        "UserName": "Rachel Goldstein"
+    },
+    {
+        "Id": 5,
+        "Name": "New Balance 574",
+        "isElegant": true,
+        "UserName": "Shlomo Friedman"
+    }
+]

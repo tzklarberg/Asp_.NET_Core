@@ -1,0 +1,26 @@
+[{
+        "Id": 1,
+        "Name": "David Cohen",
+        "Password": "SecurePass123!"
+    },
+    {
+        "Id": 2,
+        "Name": "Miriam Levi",
+        "Password": "MiriamPassword2023!"
+    },
+    {
+        "Id": 3,
+        "Name": "Yaakov Schwartz",
+        "Password": "YaakovSecure2023!"
+    },
+    {
+        "Id": 4,
+        "Name": "Rachel Goldstein",
+        "Password": "RachelPassword!"
+    },
+    {
+        "Id": 5,
+        "Name": "Shlomo Friedman",
+        "Password": "ShlomoFriedman2023!"
+    }
+]

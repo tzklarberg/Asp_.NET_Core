@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "prompt-checkbox": "^2.2.0",
+    "uuid": "^11.1.0"
+  }
+}

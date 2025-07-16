@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הנעליים שלי</title>
+    <link rel="icon" href="./assets/icon.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+</head>
+
+<body class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 id="userName" class="mb-4"></h2>
+            <div class="card shadow mb-4">
+                <div class="card-header">הנעליים שלי</div>
+                <ul id="shoesList" class="list-group list-group-flush"></ul>
+            </div>
+            <div class="card card-body shadow">
+                <h4 class="mb-3">הוסף נעל:</h4>
+                <form id="addShoeForm" class="row g-2 align-items-center">
+                    <div class="col">
+                        <input type="text" id="shoeName" class="form-control" placeholder="שם נעל" required>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-success">הוסף</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        getCookie = (name) => {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        async function fetchUserAndShoes() {
+            const token = getCookie('AuthToken');
+            if (!token) return window.location.href = '/login.html';
+            //plaster id
+            const userRes = await fetch('http://localhost:5187/User/6', {
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+            if (!userRes.ok) return window.location.href = '/login.html';
+            const user = await userRes.json();
+            document.getElementById('userName').innerText = 'שלום, ' + user.name;
+
+            const shoesRes = await fetch('http://localhost:5187/Shoes', {
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+            const shoes = await shoesRes.json();
+            const list = document.getElementById('shoesList');
+            list.innerHTML = '';
+            shoes.forEach(shoe => {
+                const li = document.createElement('li');
+                li.className = "list-group-item d-flex justify-content-between align-items-center";
+                li.innerHTML = `
+                    <span>${shoe.name}</span>
+                    <span>
+                        <button onclick="editShoe(${shoe.id}, '${shoe.name}')" class="btn btn-sm btn-warning ms-2">ערוך</button>
+                        <button onclick="deleteShoe(${shoe.id})" class="btn btn-sm btn-danger">מחק</button>
+                    </span>
+                `;
+                list.appendChild(li);
+            });
+        }
+
+        document.getElementById('addShoeForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const token = getCookie('AuthToken');
+            await fetch('http://localhost:5187/Shoes', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: document.getElementById('shoeName').value
+                })
+            });
+            fetchUserAndShoes();
+        };
+
+        window.editShoe = async function(id, oldName) {
+            const newName = prompt('שם חדש לנעל:', oldName);
+            if (!newName) return;
+            const token = getCookie('AuthToken');
+            await fetch('http://localhost:5187/Shoes/' + id, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    Id: id,
+                    Name: newName
+                })
+            });
+            fetchUserAndShoes();
+        };
+
+        window.deleteShoe = async function(id) {
+            const token = getCookie('AuthToken');
+            await fetch('http://localhost:5187/Shoes/' + id, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+            fetchUserAndShoes();
+        };
+
+        fetchUserAndShoes();
+    </script>
+</body>
+
+</html>

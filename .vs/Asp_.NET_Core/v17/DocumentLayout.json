@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\The user\\Desktop\\Asp_.NET_Core\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{105FEEE6-1D0C-4878-82A7-D687AF8C6310}|CoreProject.csproj|c:\\users\\the user\\desktop\\asp_.net_core\\wwwroot\\users.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{105FEEE6-1D0C-4878-82A7-D687AF8C6310}|CoreProject.csproj|solutionrelative:wwwroot\\users.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 556,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "users.html",
+              "DocumentMoniker": "C:\\Users\\The user\\Desktop\\Asp_.NET_Core\\wwwroot\\users.html",
+              "RelativeDocumentMoniker": "wwwroot\\users.html",
+              "ToolTip": "C:\\Users\\The user\\Desktop\\Asp_.NET_Core\\wwwroot\\users.html",
+              "RelativeToolTip": "wwwroot\\users.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-06-16T10:00:33.376Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
