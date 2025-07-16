@@ -732,3 +732,14 @@ C:\Users\The user\Desktop\תכנות\שנה ב\Core\Home Work\Asp_.NET_Core\obj\
 C:\Users\The user\Desktop\תכנות\שנה ב\Core\Home Work\Asp_.NET_Core\obj\Debug\net8.0\CoreProj.FF7014C9.Up2Date
 C:\Users\The user\Desktop\תכנות\שנה ב\Core\Home Work\Asp_.NET_Core\obj\Debug\net8.0\CoreProject.genruntimeconfig.cache
 C:\Users\The user\Desktop\תכנות\שנה ב\Core\Home Work\Asp_.NET_Core\obj\Debug\net8.0\ref\CoreProject.dll
+C:\Users\1\Desktop\Final Project in CORE\obj\Debug\net8.0\CoreProject.csproj.AssemblyReference.cache
+C:\Users\1\Desktop\Final Project in CORE\obj\Debug\net8.0\CoreProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\Desktop\Final Project in CORE\obj\Debug\net8.0\CoreProject.AssemblyInfoInputs.cache
+C:\Users\1\Desktop\Final Project in CORE\obj\Debug\net8.0\CoreProject.AssemblyInfo.cs
+C:\Users\1\Desktop\Final Project in CORE\obj\Debug\net8.0\CoreProject.csproj.CoreCompileInputs.cache
+C:\Users\1\Desktop\Final Project in CORE\obj\Debug\net8.0\CoreProject.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\1\Desktop\Final Project in CORE\obj\Debug\net8.0\CoreProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\1\Desktop\Final Project in CORE\obj\Debug\net8.0\CoreProject.sourcelink.json
+C:\Users\1\Desktop\Final Project in CORE\obj\Debug\net8.0\CoreProject.dll
+C:\Users\1\Desktop\Final Project in CORE\obj\Debug\net8.0\refint\CoreProject.dll
+C:\Users\1\Desktop\Final Project in CORE\obj\Debug\net8.0\CoreProject.pdb

@@ -1,33 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\The user\\Desktop\\תכנות\\שנה ב\\Core\\Home Work\\Asp_.NET_Core\\CoreProject.csproj": {}
+    "C:\\Users\\1\\Desktop\\Final Project in CORE\\CoreProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\The user\\Desktop\\תכנות\\שנה ב\\Core\\Home Work\\Asp_.NET_Core\\CoreProject.csproj": {
+    "C:\\Users\\1\\Desktop\\Final Project in CORE\\CoreProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\The user\\Desktop\\תכנות\\שנה ב\\Core\\Home Work\\Asp_.NET_Core\\CoreProject.csproj",
+        "projectUniqueName": "C:\\Users\\1\\Desktop\\Final Project in CORE\\CoreProject.csproj",
         "projectName": "CoreProject",
-        "projectPath": "C:\\Users\\The user\\Desktop\\תכנות\\שנה ב\\Core\\Home Work\\Asp_.NET_Core\\CoreProject.csproj",
-        "packagesPath": "C:\\Users\\The user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\The user\\Desktop\\תכנות\\שנה ב\\Core\\Home Work\\Asp_.NET_Core\\obj\\",
+        "projectPath": "C:\\Users\\1\\Desktop\\Final Project in CORE\\CoreProject.csproj",
+        "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\1\\Desktop\\Final Project in CORE\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\The user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -103,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.412/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
